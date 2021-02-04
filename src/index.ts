@@ -25,7 +25,7 @@ export function avg(a: number, b: number, c: number): number {
  * @beta
  */
 export function sum3(a: number, b: number, c: number): number {
-  return sum2(a, sum2(b, c));
+  return _sum2(a, _sum2(b, c));
 }
 
 /**
@@ -36,7 +36,7 @@ export function sum3(a: number, b: number, c: number): number {
  *
  * @internal
  */
-export function sum2(a: number, b: number): number {
+export function _sum2(a: number, b: number): number {
   const sum = a + b;
   return sum;
 }
