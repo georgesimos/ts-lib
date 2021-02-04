@@ -1,14 +1,17 @@
 {
   "name": "ts-lib",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "build:docs": "yarn api-extractor run --local",
+    "build:docs": "yarn build && yarn api:report && yarn api:docs",
     "dev": "yarn build --watch --preserveWatchOutput",
     "lint": "eslint src --ext js,ts",
-    "test": "jest"
+    "test": "jest",
+    "api:diagnostics": "api-extractor run --local --diagnostics",
+    "api:docs": "api-documenter markdown -i temp -o docs",
+    "api:report": "api-extractor run --local --verbose"
   },
   "license": "MIT",
   "devDependencies": {
